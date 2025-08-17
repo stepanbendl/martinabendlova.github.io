@@ -105,15 +105,16 @@ section {
     transform: translateY(-3px);
 }
 
-/* Icon placeholders */
-.icon-placeholder {
-    width: 40px;
-    height: 40px;
+.service-icon {
+    width: 60px;   /* bigger circle */
+    height: 60px;
     background-color: var(--accent-color);
     border-radius: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* vertical center */
+    justify-content: center; /* horizontal center */
+    margin: 0 auto 20px; /* center above text */
+    box-shadow: var(--shadow);
 }
 
 /* Header & Navigation */
@@ -439,11 +440,12 @@ header {
 /* Contact Section */
 .contact {
     background-color: var(--light-bg);
+    padding: 60px 0;
 }
 
 .contact-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 50px;
 }
 
@@ -497,7 +499,7 @@ header {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
 }
@@ -509,7 +511,20 @@ header {
 .form-group button {
     border: none;
     width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
+
+.form-group button:hover {
+    background-color: var(--accent-color);
+}
+
 
 /* Footer */
 .footer {
