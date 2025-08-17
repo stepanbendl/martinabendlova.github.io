@@ -196,28 +196,27 @@ header {
 /* About Section */
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 50px;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .about-image {
-    flex: 1;
-}
-
-.image-placeholder {
-    width: 100%;
-    aspect-ratio: 3/4;
-    background-color: var(--light-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
-    font-style: italic;
-    border-radius: 10px;
+    flex: 0 0 400px; /* Don't grow, don't shrink, fixed 400px width */
+    min-width: 400px; /* Ensure minimum width */
 }
 
 .about-text {
-    flex: 1;
+    flex: 1; /* Takes remaining space */
+    min-width: 0; /* Allow text to shrink if needed */
+}
+
+.doctor-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 3/4;
 }
 
 .about-text h3 {
@@ -625,6 +624,19 @@ header {
     
     .pricing-card.featured:hover {
         transform: translateY(-10px);
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        text-align: center;
     }
 }
 
