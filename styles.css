@@ -474,6 +474,21 @@ header {
     margin-right: 15px;
 }
 
+.contact-link {
+  margin-left: 6px;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #c13584; /* darker Instagram purple */
+  transform: translateY(-1px);
+  text-decoration: underline;
+}
+
+
 .contact-form form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -566,7 +581,7 @@ header {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -583,6 +598,7 @@ header {
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
+    color: var(--white);
 }
 
 /* Media Queries */
