@@ -5,7 +5,7 @@
     const nextBtn = document.querySelector('.next-btn');
     let currentSlideIndex = 0;
     let autoSlideInterval;
-    let autoSlideActive = true; // NEW: Flag to control the auto-slide feature
+    let autoSlideActive = true;
 
     if (slides.length > 0) {
         function showSlide(index) {

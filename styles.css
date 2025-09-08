@@ -550,30 +550,6 @@ header {
     font-size: 0.9rem;
 }
 
-/* Instagram Feed Section */
-.instagram-feed {
-    padding: 80px 0;
-    background-color: var(--white);
-}
-
-.lightwidget-wrapper {
-    max-width: 900px;
-    margin: 0 auto 40px auto;
-    box-shadow: var(--shadow);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.lightwidget-widget {
-    width: 100% !important;
-    border: 0 !important;
-    overflow: hidden !important;
-}
-
-.instagram-follow {
-    text-align: center;
-}
-
 /* Contact Section */
 .contact {
     background-color: var(--light-bg);
