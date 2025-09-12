@@ -23,7 +23,7 @@
                 <div id="form-container">
                     <h2>Stáhněte si Ebook Zdarma!</h2>
                     <p>Zadejte své údaje a získejte mého průvodce pro lepší zdraví.</p>
-                    <form id="ebook-form">
+                    <form id="ebook-form" action="https://script.google.com/macros/s/AKfycbyHU-x9GdX0nbRvoDFVB9o871uHmJFWrgsex9PcI3iArH5uQADXfnduhGAMraZl0XS_/exec" method="post" target="hidden_iframe">
                         <div class="form-group">
                             <label for="name">Vaše jméno</label>
                             <input type="text" id="name" name="name" required placeholder="Jana Nováková">
@@ -45,6 +45,8 @@
                     <p>Váš ebook je připraven ke stažení. Klikněte na tlačítko níže.</p>
                     <a href="https://www.martinabendlova.cz/resources/pcos_ebook.pdf" class="btn-primary" target="_blank">Stáhnout nyní</a>
                 </div>
+
+                <iframe name="hidden_iframe" style="display:none;"></iframe>
             </div>
         </div>
     </section>
