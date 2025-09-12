@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebook Zdarma - MUDr. Martina Bendlová</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="resources/favicon_design.svg">
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav class="navbar"><a href="/" class="logo">MUDr. Martina Bendlová</a></nav>
+        </div>
+    </header>
+    <section class="ebook-section">
+        <div class="container">
+            <div class="ebook-card">
+                <div id="form-container">
+                    <h2>Stáhněte si Ebook Zdarma!</h2>
+                    <p>Zadejte své údaje a získejte mého průvodce pro lepší zdraví.</p>
+                    <form id="ebook-form">
+                        <div class="form-group">
+                            <label for="name">Vaše jméno</label>
+                            <input type="text" id="name" name="name" required placeholder="Jana Nováková">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Váš email</label>
+                            <input type="email" id="email" name="email" required placeholder="jmeno@email.cz">
+                        </div>
+                        <div class="form-group-consent">
+                            <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                            <label for="marketing-consent">Souhlasím se zasíláním novinek a marketingových sdělení.</label>
+                        </div>
+                        <button type="submit" id="submit-btn" class="btn-primary">Stáhnout ebook</button>
+                    </form>
+                    <p id="error-message" class="error-text"></p>
+                </div>
+                <div id="success-message" style="display: none;">
+                    <h3>Děkuji! ✨</h3>
+                    <p>Váš ebook je připraven ke stažení. Klikněte na tlačítko níže.</p>
+                    <a href="https://www.martinabendlova.cz/resources/pcos_ebook.pdf" class="btn-primary" target="_blank">Stáhnout nyní</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom"><p>&copy; 2025 Martina Bendlová | Funkční medicína.</p></div>
+        </div>
+    </footer>
+    <script src="ebook_script.js"></script>
+</body>
+</html>
