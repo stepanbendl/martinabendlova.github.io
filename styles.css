@@ -705,6 +705,84 @@ header {
     color: var(--white);
 }
 
+
+/* Ebook Page Styles */
+/* eBook Section Styles */
+.ebook-section {
+    padding: 100px 0;
+    background-color: var(--light-bg);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ebook-card {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ebook-card h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.ebook-card p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.ebook-card .form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.ebook-card .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.ebook-card button,
+.ebook-card .btn-primary {
+    width: 100%;
+}
+
+#success-message h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.error-text {
+    color: #D32F2F;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    min-height: 1.2em;
+}
+
+.form-group-consent {
+    text-align: left;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.form-group-consent input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
 /* Media Queries */
 @media screen and (max-width: 992px) {
     .section-header h2 {
