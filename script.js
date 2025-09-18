@@ -1,13 +1,25 @@
-// --- Carousel logic moved inside ---
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    // --- Carousel logic ---
     const slides = document.querySelectorAll('.review-slide');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    let currentSlideIndex = 0;
-    let autoSlideInterval;
-    let autoSlideActive = true;
-
+    
     if (slides.length > 0) {
+        let currentSlideIndex = 0;
+        let autoSlideInterval;
+        let autoSlideActive = true;
+
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
@@ -28,56 +40,53 @@
             resetAutoSlide();
         }
         
-        // This function is now run by the interval
         function autoSlide() {
-            let newIndex = (currentSlideIndex + 1) % slides.length;
-            showSlide(newIndex);
+            if (autoSlideActive) {
+                let newIndex = (currentSlideIndex + 1) % slides.length;
+                showSlide(newIndex);
+            }
         }
 
         function startAutoSlide() {
-            if (autoSlideActive) { // Only start if it's still active
+            if (autoSlideActive) {
                 autoSlideInterval = setInterval(autoSlide, 5000);
             }
         }
 
         function resetAutoSlide() {
             clearInterval(autoSlideInterval);
-            startAutoSlide(); // Will now respect the autoSlideActive flag
+            startAutoSlide();
         }
 
-        // Event listeners for buttons and dots
         prevBtn.addEventListener('click', () => {
-            autoSlideActive = false; // Stop auto-sliding on click
-            let newIndex = currentSlideIndex - 1;
-            if (newIndex < 0) { newIndex = slides.length - 1; }
-            showSlide(newIndex);
-            resetAutoSlide();
+            autoSlideActive = false;
+            changeSlide(-1);
         });
 
         nextBtn.addEventListener('click', () => {
-            autoSlideActive = false; // Stop auto-sliding on click
-            let newIndex = currentSlideIndex + 1;
-            if (newIndex >= slides.length) { newIndex = 0; }
-            showSlide(newIndex);
-            resetAutoSlide();
+            autoSlideActive = false;
+            changeSlide(1);
         });
 
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
-                autoSlideActive = false; // Stop auto-sliding on click
+                autoSlideActive = false;
                 showSlide(index);
                 resetAutoSlide();
             });
         });
 
-        // Pause auto-slide on hover
         const carousel = document.querySelector('.reviews-carousel');
         if (carousel) {
             carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-            carousel.addEventListener('mouseleave', () => resetAutoSlide()); // Will correctly not restart if stopped
+            carousel.addEventListener('mouseleave', () => {
+                if(autoSlideActive) {
+                    resetAutoSlide()
+                }
+            });
         }
 
-        // Initialize
         showSlide(0);
         startAutoSlide();
     }
+});

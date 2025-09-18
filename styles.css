@@ -899,11 +899,21 @@ header {
     }
     
     .carousel-navigation {
-        flex-direction: column;
-        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 25px;
     }
-    
+
     .carousel-dots {
-        order: -1;
+        order: 1; 
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-btn {
+        order: 2;
     }
 }
